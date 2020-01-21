@@ -8,7 +8,7 @@ object ReadCSV {
 
     val spark = SparkSession.builder().appName("read_csv").master("local").getOrCreate()
 
-    val df = spark.read.csv(getClass.getResource("/partition_data/").getPath())
+    val df = spark.read.csv(getClass.getResource("/partition_data").getPath())
 
     df.show()
 
