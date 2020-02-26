@@ -2,6 +2,7 @@ package exampleBasics
 
 import org.apache.spark.sql.SparkSession
 import org.apache.log4j.Logger
+import org.apache.avro.file.FileReader._
 
 object ReadWriteAvroFile {
 
@@ -12,9 +13,9 @@ object ReadWriteAvroFile {
 
     val spark = SparkSession.builder().master("local").getOrCreate()
 
-    val csvDF = spark.read.option("header",true).csv("/Users/tarzan/code/IdeaProjects/SparkAppliction/ScalaSpark/src/main/resources/country.csv")
-
-    println("" + csvDF.show())
+//    val csvDF = spark.read.option("header",true).csv("/Users/tarzan/code/IdeaProjects/SparkAppliction/ScalaSpark/src/main/resources/country.csv")
+//
+//    println("" + csvDF.show())
 
     //csvDF.write.format("avro").save("/Users/tarzan/code/IdeaProjects/SparkAppliction/ScalaSpark/src/main/resources/country.avro")
 
