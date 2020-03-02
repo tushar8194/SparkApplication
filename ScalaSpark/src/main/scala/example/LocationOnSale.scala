@@ -1,7 +1,6 @@
-import java.io.FileWriter
+package example
 
 import org.apache.spark.{SparkConf, SparkContext}
-
 
 object LocationOnSale {
   def main(args: Array[String]) {
@@ -10,8 +9,8 @@ object LocationOnSale {
     val conf = new SparkConf().setAppName("SparkJoins").setMaster("local")
     val sc = new SparkContext(conf)
 
-    val transactionsIn = sc.textFile("/Users/z002gh2/naina/GITREPO/WorkspaceLearning/LearningScala/src/main/resources/transactions")
-    val usersIn = sc.textFile("/Users/z002gh2/naina/GITREPO/WorkspaceLearning/LearningScala/src/main/resources/Users")
+    val transactionsIn = sc.textFile(getClass.getResource("/transactions").getPath)
+    val usersIn = sc.textFile(getClass.getResource("/Users").getPath)
 
 
     val newTransactionsPair = transactionsIn.map { t =>
@@ -37,7 +36,8 @@ object LocationOnSale {
     val finalFile=headerRDD++(file)
     finalFile.foreach(println)
 
-    val output = "/Users/z002gh2/naina/GITREPO/WorkspaceLearning/LearningScala/src/main/resources/output"
+
+    val output = getClass.getResource("/output").getPath
     finalFile.repartition(1). saveAsTextFile(output)
 
     sc.stop()
