@@ -1,4 +1,4 @@
-package retail
+package interview.retail
 
 import scala.util.Random
 import scala.util.control.Breaks._

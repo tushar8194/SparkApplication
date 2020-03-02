@@ -1,4 +1,4 @@
-package exampleBasics
+package example
 
 import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.functions.col

@@ -1,4 +1,4 @@
-package exampleBasics
+package example
 
 
 object LazyEvaluationCheck {

@@ -1,4 +1,4 @@
-package retail
+package interview.retail
 
 object coinSequense {
 

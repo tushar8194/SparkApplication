@@ -1,4 +1,4 @@
-package twitter;
+package interview.twitter;
 
 import java.util.*;
 
