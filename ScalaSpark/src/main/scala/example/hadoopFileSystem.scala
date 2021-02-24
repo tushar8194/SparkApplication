@@ -18,9 +18,9 @@ object hadoopFileSystem {
     val src = new Path("sourcePath")
     val dest = new Path("destinationPath")
 
-    if(fs.exists(src))
+    if(fs.exists(src)){
       fs.copyToLocalFile(false, src, dest)
-       "destinationPath"
+       "destinationPath"}
     else if(scala.reflect.io.File("sourcePath").exists)
       "sourcePath"
     else

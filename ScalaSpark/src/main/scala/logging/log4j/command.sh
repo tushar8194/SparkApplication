@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+spark-submit --class logging.log4j.testLog --master yarn --deploy-mode client --conf "spark.executor.extraJavaOptions=-Dlog4j.configuration=file:./log4j.properties" --conf "driver-java-options=-Dlog4j.configuration=file:./log4j.properties" ScalaSpark-1.0-SNAPSHOT.jar
